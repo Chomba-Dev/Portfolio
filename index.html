@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Gershom Chomba Portfolio</title>
+  <link rel="stylesheet" href="style.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+</head>
+<body>
+  <header>
+    <div class="logo"><strong>Gershom Chomba</strong></div>
+    <nav>
+      <a href="#projects">Projects</a>
+      <a href="#tech">Tech Stack</a>
+      <a href="#contact">Contact</a>
+      <button id="theme-toggle" aria-label="Toggle Theme">
+        <i class="fas fa-moon"></i>
+      </button>
+    </nav>
+  </header>
+
+  <section id="hero" class="hero">
+    <div class="hero-text">
+      <h1>Gershom Chomba</h1>
+      <p>Computer science student passionate about full-stack development. I build systems using PHP, Node.js, ASP.NET, and more.</p>
+      <button class="cta" onclick="scrollToContact()">Contact Me</button>
+    </div>
+    <img src="images/Me3.jpg" alt="profile picture" class="profile-img"/>
+  </section>
+
+  <section id="projects">
+    <h2 class="section-title">Projects I have Worked On</h2>
+    <div class="projects">
+      <div class="card">
+        <h3>Library Management System</h3>
+        <p>Blazor + ASP.NET WEB API system for managing books and users with Identity.</p>
+      </div>
+      <div class="card">
+        <h3>COBOSU Platform</h3>
+        <p>Full-stack platform for Copperbelt University Student Union.</p>
+      </div>
+      <div class="card">
+        <h3>Christ in Song App</h3>
+        <p>Mobile hymn app supporting multiple languages. I worked on the Bemba translation.</p>
+      </div>
+      <div class="card">
+        <h3>WorkBook Investment Limited</h3>
+        <p>A company website built with Next.js and Tailwind CSS.</p>
+        <a href="https://company-website-repo.vercel.app/" target="_blank" class="project-link">View Project</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="tech">
+    <h2 class="section-title">Tech Stack</h2>
+    <div class="tech-stack">
+      <div class="card"><strong>Languages:</strong><br>HTML, CSS, JS, PHP, C#, C++, JAVA, SQL</div>
+      <div class="card"><strong>Frameworks:</strong><br>ASP.NET MVC, Blazor, Node.js, Next.js, React</div>
+      <div class="card"><strong>Tools:</strong><br>MySQL, Git, VS Code, JetBrains Rider</div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2 class="section-title">Contact Me</h2>
+    <p>Email: <a href="mailto:chombagershom035@gmail.com">chombagershom035@gmail.com</a></p>
+
+    <div class="social-links">
+      <a href="https://github.com/Chomba-Dev" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+      <a href="https://www.facebook.com/itx.gershom/" target="_blank" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+      <a href="https://www.instagram.com/gershom.chomba/" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+    </div>
+
+    <h3>Send Me a Message</h3>
+    <form id="contact-form">
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" required/>
+
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required/>
+
+      <label for="phone">Phone Number:</label>
+      <input type="tel" id="phone" name="phone" required placeholder="e.g. +26097XXXXXXX"/>
+
+      <label for="message">Message:</label>
+      <textarea id="message" name="message" rows="5" required></textarea>
+
+      <button type="submit">Send Message</button>
+      <p id="form-response"></p>
+    </form>
+  </section>
+
+  <footer>
+    &copy; 2025 Gershom Chomba. All rights reserved.
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>
