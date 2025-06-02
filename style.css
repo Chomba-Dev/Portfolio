@@ -1,12 +1,13 @@
+/* ─── Reset & Base Styles ───────────────────────────────────────────────────────────────── */
+
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
-html, body {
-  width: 100%;
-  overflow-x: hidden;
+html {
+  scroll-behavior: smooth;
 }
 
 body {
@@ -14,22 +15,38 @@ body {
   background-color: #0d0d0d;
   color: #f2f2f2;
   transition: background 0.3s ease, color 0.3s ease;
+  overflow-x: hidden;
 }
+
+/* ─── HEADER & NAVIGATION ───────────────────────────────────────────────────────────── */
 
 header {
   background: #1a1a1a;
-  padding: 1rem;
+  padding: 1rem 2rem;
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
-  flex-wrap: wrap;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+#hamburger {
+  display: none;
+  background: none;
+  border: none;
+  color: #3ddc33;
+  font-size: 1.5rem;
+  cursor: pointer;
 }
 
 nav {
   display: flex;
   align-items: center;
   gap: 1rem;
-  flex-wrap: wrap;
 }
 
 nav a {
@@ -47,14 +64,35 @@ nav a {
   cursor: pointer;
 }
 
+/* ─── FLOATING CONTACT BUTTON ───────────────────────────────────────────────────────── */
+
+.floating-contact {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #3ddc33;
+  color: #000;
+  padding: 0.8rem;
+  border-radius: 50%;
+  font-size: 1.5rem;
+  box-shadow: 0 0 10px #3ddc33;
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+}
+
+/* ─── HERO SECTION ──────────────────────────────────────────────────────────────────── */
+
 .hero {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  padding: 3rem 1rem;
-  text-align: center;
+  padding: 4rem 2rem;
   gap: 2rem;
+  text-align: center;
 }
 
 .hero-text {
@@ -62,7 +100,7 @@ nav a {
 }
 
 .hero-text h1 {
-  font-size: 2.5rem;
+  font-size: 2.8rem;
   margin-bottom: 1rem;
 }
 
@@ -72,54 +110,75 @@ nav a {
   padding: 1rem 2rem;
   font-weight: bold;
   border-radius: 8px;
-  box-shadow: 0 0 15px #3ddc33;
+  box-shadow: 0 0 20px #3ddc33;
   border: none;
   cursor: pointer;
-  margin-top: 1rem;
+  font-size: 1rem;
+  transition: background 0.3s ease;
+  margin-top: 2rem;
+}
+
+.cta:hover {
+  background-color: #32b52a;
 }
 
 .profile-img {
-  width: 250px;
-  height: 250px;
+  width: 300px;
+  height: 300px;
   border-radius: 50%;
   object-fit: cover;
 }
 
+/* ─── SECTIONS GENERALLY ───────────────────────────────────────────────────────────── */
+
 section {
-  padding: 2.5rem 1rem;
+  padding: 3rem 2rem;
 }
 
 .section-title {
-  font-size: 1.8rem;
-  text-align: center;
+  font-size: 2rem;
   margin-bottom: 1.5rem;
+  text-align: center;
 }
 
-.projects, .tech-stack {
+/* ─── PROJECTS & TECH STACK ─────────────────────────────────────────────────────────── */
+
+.projects,
+.tech-stack {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2rem;
 }
 
 .card {
   background: #1e1e1e;
-  padding: 1.2rem;
+  color: inherit;
+  padding: 1.5rem;
   border-radius: 10px;
+  transition: background 0.3s ease, color 0.3s ease;
 }
 
 .project-link {
   display: inline-block;
-  margin-top: 0.8rem;
-  background: #3ddc33;
+  margin-top: 1rem;
+  background-color: #3ddc33;
   color: #000;
   padding: 0.5rem 1rem;
   border-radius: 5px;
   text-decoration: none;
   font-weight: bold;
+  transition: background 0.3s ease;
 }
+
+.project-link:hover {
+  background-color: #32b52a;
+}
+
+/* ─── CONTACT SECTION ───────────────────────────────────────────────────────────────── */
 
 #contact a {
   color: #3ddc33;
+  text-decoration: none;
 }
 
 .social-links {
@@ -137,43 +196,60 @@ section {
   flex-direction: column;
 }
 
+#contact-form label {
+  margin: 0.5rem 0 0.2rem;
+}
+
 #contact-form input,
 #contact-form textarea {
   padding: 0.8rem;
   margin-bottom: 1rem;
-  background: #222;
+  background-color: #222;
   border: 1px solid #444;
   color: #fff;
   border-radius: 5px;
+  font-size: 1rem;
 }
 
 #contact-form button {
-  background: #3ddc33;
+  background-color: #3ddc33;
   color: #000;
   font-weight: bold;
   padding: 1rem;
   border: none;
   border-radius: 5px;
   cursor: pointer;
+  transition: background 0.3s ease;
 }
+
+#contact-form button:hover {
+  background-color: #32b52a;
+}
+
+#form-response {
+  font-size: 0.95rem;
+}
+
+/* ─── FOOTER ────────────────────────────────────────────────────────────────────────── */
 
 footer {
   background: #1a1a1a;
-  color: #ccc;
   text-align: center;
-  padding: 1.5rem;
+  padding: 2rem;
   font-size: 0.9rem;
   margin-top: 3rem;
+  color: #ccc;
 }
 
-/* Light mode styles */
+/* ─── LIGHT THEME ───────────────────────────────────────────────────────────────────── */
+
 body.light {
   background: #f5f5f5;
   color: #1a1a1a;
 }
 
 body.light header {
-  background: #fff;
+  background-color: #fff;
 }
 
 body.light nav a,
@@ -182,7 +258,7 @@ body.light .social-links a {
 }
 
 body.light .card {
-  background: #fff;
+  background: #ffffff;
   color: #1a1a1a;
 }
 
@@ -207,7 +283,56 @@ body.light #theme-toggle {
   color: #1a1a1a;
 }
 
-/* Responsive */
+/* ─── HAMBURGER MENU (MOBILE) ───────────────────────────────────────────────────────── */
+
+@media (max-width: 768px) {
+  #hamburger {
+    display: block;
+  }
+
+  nav {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    background: #1a1a1a;
+    padding: 1rem 0;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    z-index: 100;
+  }
+
+  nav.show {
+    display: flex;
+  }
+
+  nav a {
+    padding: 0.7rem 1rem;
+    width: 100%;
+    text-align: center;
+    border-top: 1px solid #333;
+  }
+
+  nav button#theme-toggle {
+    margin: 0.7rem auto;
+  }
+}
+
+/* ─── ANIMATIONS ───────────────────────────────────────────────────────────────────── */
+
+[data-animate] {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.6s ease-out;
+}
+
+[data-animate].in-view {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ─── SMALLER SCREENS ───────────────────────────────────────────────────────────────── */
+
 @media (max-width: 480px) {
   .hero-text h1 {
     font-size: 2rem;
@@ -217,11 +342,13 @@ body.light #theme-toggle {
     width: 100%;
   }
 
-  nav {
-    justify-content: center;
+  .projects,
+  .tech-stack {
+    grid-template-columns: 1fr;
   }
 
-  .projects, .tech-stack {
-    grid-template-columns: 1fr;
+  .profile-img {
+    width: 200px;
+    height: 200px;
   }
 }

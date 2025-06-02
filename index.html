@@ -3,39 +3,52 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Gershom Chomba Portfolio</title>
+  <title>Gershom Chomba | Portfolio</title>
   <link rel="stylesheet" href="style.css"/>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"/>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <link rel="apple-touch-icon" sizes="180x180" href="icons/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="icons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="icons/favicon-16x16.png">
+  <link rel="manifest" href="icons/site.webmanifest">
 </head>
 <body>
+  <!-- Header with Hamburger, Logo, Nav Links, Theme Toggle -->
   <header>
     <div class="logo"><strong>Gershom Chomba</strong></div>
-    <nav>
+    <button id="hamburger" aria-label="Toggle menu"><i class="fas fa-bars"></i></button>
+    <nav id="nav-links">
       <a href="#projects">Projects</a>
       <a href="#tech">Tech Stack</a>
       <a href="#contact">Contact</a>
-      <button id="theme-toggle" aria-label="Toggle Theme">
+      <button id="theme-toggle" aria-label="Toggle theme">
         <i class="fas fa-moon"></i>
       </button>
     </nav>
   </header>
 
-  <section id="hero" class="hero">
+  <!-- Floating Contact Button (visible on mobile/desktop) -->
+  <a href="#contact" class="floating-contact" aria-label="Contact">
+    <i class="fas fa-envelope"></i>
+  </a>
+
+  <!-- Hero Section -->
+  <section id="hero" class="hero" data-animate="fade-in">
     <div class="hero-text">
       <h1>Gershom Chomba</h1>
       <p>Computer science student passionate about full-stack development. I build systems using PHP, Node.js, ASP.NET, and more.</p>
       <button class="cta" onclick="scrollToContact()">Contact Me</button>
     </div>
-    <img src="images/Me3.jpg" alt="profile picture" class="profile-img"/>
+    <img src="images/Me3.jpg" alt="Profile picture of Gershom Chomba" class="profile-img"/>
   </section>
 
-  <section id="projects">
-    <h2 class="section-title">Projects I have Worked On</h2>
+  <!-- Projects Section -->
+  <section id="projects" data-animate="slide-in">
+    <h2 class="section-title">Projects I Have Worked On</h2>
     <div class="projects">
       <div class="card">
         <h3>Library Management System</h3>
-        <p>Blazor + ASP.NET WEB API system for managing books and users with Identity.</p>
+        <p>Blazor + ASP.NET Web API system for managing books and users with Identity.</p>
       </div>
       <div class="card">
         <h3>COBOSU Platform</h3>
@@ -47,22 +60,24 @@
       </div>
       <div class="card">
         <h3>WorkBook Investment Limited</h3>
-        <p>A company website built with Next.js and Tailwind CSS.</p>
+        <p>Company website built with Next.js and Tailwind CSS.</p>
         <a href="https://company-website-repo.vercel.app/" target="_blank" class="project-link">View Project</a>
       </div>
     </div>
   </section>
 
-  <section id="tech">
+  <!-- Tech Stack Section -->
+  <section id="tech" data-animate="slide-in">
     <h2 class="section-title">Tech Stack</h2>
     <div class="tech-stack">
-      <div class="card"><strong>Languages:</strong><br>HTML, CSS, JS, PHP, C#, C++, JAVA, SQL</div>
-      <div class="card"><strong>Frameworks:</strong><br>ASP.NET MVC, Blazor, Node.js, Next.js, React</div>
-      <div class="card"><strong>Tools:</strong><br>MySQL, Git, VS Code, JetBrains Rider</div>
+      <div class="card"><strong>Languages:</strong><br/>HTML, CSS, JS, PHP, C#, C++, Java, SQL</div>
+      <div class="card"><strong>Frameworks:</strong><br/>ASP.NET MVC, Blazor, Node.js, Next.js, React</div>
+      <div class="card"><strong>Tools:</strong><br/>MySQL, Git, VS Code, JetBrains Rider</div>
     </div>
   </section>
 
-  <section id="contact">
+  <!-- Contact Section -->
+  <section id="contact" data-animate="fade-in">
     <h2 class="section-title">Contact Me</h2>
     <p>Email: <a href="mailto:chombagershom035@gmail.com">chombagershom035@gmail.com</a></p>
 
@@ -87,13 +102,14 @@
       <textarea id="message" name="message" rows="5" required></textarea>
 
       <button type="submit">Send Message</button>
-      <p id="form-response"></p>
+      <p id="form-response" style="margin-top: 0.5rem;"></p>
     </form>
   </section>
 
   <footer>
     &copy; 2025 Gershom Chomba. All rights reserved.
   </footer>
+
   <script src="script.js"></script>
 </body>
 </html>
