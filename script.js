@@ -20,7 +20,6 @@ document.getElementById('contact-form').addEventListener('submit', function (e) 
     return;
   }
 
-  // Simple phone validation
   const phonePattern = /^[\d\s+\-()]{7,20}$/;
   if (!phonePattern.test(phone)) {
     responseElem.style.color = 'red';
@@ -28,10 +27,19 @@ document.getElementById('contact-form').addEventListener('submit', function (e) 
     return;
   }
 
-  responseElem.style.color = 'green';
-  responseElem.textContent = 'Thank you for your message! We will get back to you soon.';
-  this.reset();
+  // Send using EmailJS
+  emailjs.sendForm('service_onwol21', 'template_27fvsa4', this)
+    .then(() => {
+      responseElem.style.color = 'green';
+      responseElem.textContent = '✅ Message sent successfully!';
+      this.reset();
+    }, (error) => {
+      console.error('EmailJS error:', error);
+      responseElem.style.color = 'red';
+      responseElem.textContent = '❌ Sending failed. Please try again later.';
+    });
 });
+
 
 // Dark/Light Theme Toggle + Icon Swap
 document.getElementById('theme-toggle').addEventListener('click', function () {
@@ -63,3 +71,6 @@ const observer = new IntersectionObserver((entries) => {
 document.querySelectorAll('[data-animate]').forEach(el => {
   observer.observe(el);
 });
+
+
+
